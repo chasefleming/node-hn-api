@@ -1,0 +1,26 @@
+{
+  "author": "Chase Fleming <chaseefleming@gmail.com>",
+  "name": "hn-api",
+  "version": "0.1.1",
+  "description": "Node wrapper for the Hacker News API",
+  "keywords": [
+    "hacker",
+    "news",
+    "api",
+    "wrapper"
+  ],
+  "scripts": {
+    "test": "mocha -R spec -t 5000"
+  },
+  "main": "index",
+  "dependencies": {
+    "request": "^2.45.0"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^1.21.4"
+  }
+}
