@@ -1,45 +1,44 @@
 var request = require('request');
 
-exports.item = function (itemId) {
+
+function getItem(itemId, callback) {
   request('https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      var item = JSON.parse(body);
-      return {
-        title: item.title,
-        url: item.url,
-        score: item.score,
-        author: item.by,
-        commentIds: item.kids
-      };
+      return callback(null, JSON.parse(body));
     }
+    return callback(error);
   });
-};
+}
 
-exports.user = function (userName) {
+function getUser(userName, callback) {
   request('https://hacker-news.firebaseio.com/v0/user/' + userName + '.json', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      var user = JSON.parse(body);
-      return {
-        karma: user.karma,
-        about: user.about,
-        submitted: user.submitted
-      };
+      return callback(null, JSON.parse(body));
     }
+    return callback(error);
   });
-};
+}
 
-exports.topStories = function () {
+function getTopStories(callback) {
   request('https://hacker-news.firebaseio.com/v0/topstories.json', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      return JSON.parse(body);
+      return callback(null, JSON.parse(body));
     }
+    return callback(error);
   });
-};
+}
 
-exports.maxItem = function () {
+function getMaxItem(callback) {
   request('https://hacker-news.firebaseio.com/v0/maxitem.json', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      return JSON.parse(body);
+      return callback(null, JSON.parse(body));
     }
+    return callback(error);
   });
-};
+}
+
+
+exports.item = getItem;
+exports.user = getUser;
+exports.topStories = getTopStories;
+exports.maxItem = getMaxItem;
