@@ -23,14 +23,14 @@ hn.item(8422599, function (err, item) {
 
 ## Get User
 ```
-hn.user('lj', function (err, user) {
+hn.user('pg', function (err, user) {
   if (!err) {
-    console.log(user.created); // 1196804954
-    console.log(user.delay); // 0
-    console.log(user.id); // lj
-    console.log(user.karma); // 2
-    console.log(user.submitted); // [ 86116 ]
-    console.log(user.about); // Bio
+    console.log(user.created); // 1160418092
+    console.log(user.delay); // 2
+    console.log(user.id); // pg
+    console.log(user.karma); // 155040
+    console.log(user.submitted); // [ 7494555, ... ]
+    console.log(user.about); // Bug fixer.
   }
 });
 ```
