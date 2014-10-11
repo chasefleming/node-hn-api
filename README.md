@@ -30,6 +30,7 @@ hn.user('lj', function (err, user) {
     console.log(user.id); // lj
     console.log(user.karma); // 2
     console.log(user.submitted); // [ 86116 ]
+    console.log(user.about); // Bio
   }
 });
 ```
