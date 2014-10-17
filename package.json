@@ -1,7 +1,7 @@
 {
   "author": "Chase Fleming <chaseefleming@gmail.com>",
   "name": "hn-api",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Node wrapper for the Hacker News API",
   "homepage": "https://github.com/chasefleming/node-hn-api",
   "keywords": [
